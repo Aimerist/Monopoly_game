@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+
+body{
+    font-family: "Microsoft JhengHei","cwTeXYen","Raleway", sans-serif, ;
+}
+
+/* 玩家名稱 */
+h3 {
+    font-weight:bold;
+    text-align:center;
+}
+h1 {
+    font-weight:bold;
+    text-align:center;
+}
+
+
+.A{
+    background-color: #FCC0BE;
+}
+.B{
+    background-color: #FCE38A;
+}
+.C{
+    background-color: #EAFFD0;
+}
+.D{
+    background-color: #DEDCEE;
+}
+.E{
+    background-color: rgba(153,204,204,1);
+}
+
+/* 遊戲區域樣式 - 橫軸 */
+div.row>div.game-size-x{
+    height: 140px;
+    font-weight:bold;
+    font-size: 22px;
+    padding: 0px 0px 5px 0px;
+}
+
+
+/* 遊戲區域樣式 - 縱軸 */
+div.game-size-y{
+    height: 140px;
+    font-weight:bold;
+    font-size: 22px;
+    padding: 0px 0px 5px 0px;
+
+}
+
+/* 遊戲圖片的格式 */
+div.image {
+    
+    background-position:center 10px;
+    background-size:100px 100px;
+    background-repeat: no-repeat;
+}
+div.image-2{
+    background-position:center 20px;
+    background-size:80px 80px;
+    background-repeat: no-repeat;
+}
+
+div.fate{
+    background-image:url(image/fate.png);
+}
+
+/* 玩家每一步的位置 */
+div.col-2 > div.row {  
+    width: 30px;
+    height: 34.2px;
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 24px;
+}
+
+/*骰子的樣式*/
+div.dice{
+    font-size:80px;
+    color: #1C1E24;
+    text-shadow: 1px 1px 50px rgba(135, 206, 235,1)
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Block Chain - 四人大富翁</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        
+
+        <!-- bootstrap 的 css 網路連結 -->
+        <link rel=" stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        
+        <link rel=" stylesheet" href="css.css">
+        
+        <!-- 系統內建的css碼 -->
+        <link rel=" stylesheet" href="">
+
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        
+        <style>
+            body{
+                font-family: "Microsoft JhengHei";}
+        </style>
+    </head>
+    <body>
+        <h1>Block Chain - 大富翁</h1>
+        <div class="container">
+            
+            <!-- 人物切四分 -->
+            <div class="row  align-items-center player">
+                        
+                <!--人物一-->
+                <div class="col" style="background-color:rgba(252,192,190,1)">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row d-flex justify-content-center">&emsp;
+                                <img alt="" src="image/孫小美.png" />
+                                &emsp;
+                            </div>
+                            <div class="row d-flex justify-content-center"><h3 id="people0">孫小美</h3></div>
+                        </div>
+                        <div class="col">
+                            <table class="table table-hover h5">
+                                   <tr>
+                                       <td>金錢</td>
+                                       <td id="A_money">$$$</td>
+                                       <td>元</td>
+                                   </tr>
+                                   <tr>
+                                       <td>地圖</td>
+                                       <td id="A_land">$$$</td>
+                                       <td>塊</td>
+                                   </tr>
+                                   <tr>
+                                       <td>精神</td>
+                                       <td id="A_health">$$$</td>
+                                       <td>%</td>
+                                   </tr>
+                               </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--人物二-->
+                <div class="col" style="background-color:rgba(252,227,138,1)">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row d-flex justify-content-center">&emsp;
+                                <img alt="" src="image/金貝貝.png" />
+                                &emsp;
+                            </div>
+                            <div class="row d-flex justify-content-center">&emsp;<h3 id="people1">金貝貝</h3></div>
+                        </div>
+                        <div class="col">
+                            <table class="table table-hover h5">
+                                   <tr>
+                                       <td>金錢</td>
+                                       <td id="B_money">$$$</td>
+                                       <td>元</td>
+                                   </tr>
+                                   <tr>
+                                       <td>地圖</td>
+                                       <td id="B_land">$$$</td>
+                                       <td>塊</td>
+                                   </tr>
+                                   <tr>
+                                       <td>精神</td>
+                                       <td id="B_health">$$$</td>
+                                       <td>%</td>
+                                   </tr>
+                               </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--人物三-->
+                <div class="col" style="background-color:#EAFFD0">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row d-flex justify-content-center">&emsp;
+                                <img alt="" src="image/阿土伯.png" />
+                                &emsp;
+                            </div>
+                            <div class="row d-flex justify-content-center">&emsp;<h3 id="people2">阿土伯</h3></div>
+                        </div>
+                        <div class="col">
+                            <table class="table table-hover h5">
+                                   <tr>
+                                       <td>金錢</td>
+                                       <td id="C_money">$$$</td>
+                                       <td>元</td>
+                                   </tr>
+                                   <tr>
+                                       <td>地圖</td>
+                                       <td id="C_land">$$$</td>
+                                       <td>塊</td>
+                                   </tr>
+                                   <tr>
+                                       <td>精神</td>
+                                       <td id="C_health">$$$</td>
+                                       <td>%</td>
+                                   </tr>
+                               </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--人物四-->
+                <div class="col" style="background-color:rgba(222,220,238,1)">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row d-flex justify-content-center">&emsp;
+                                <img alt="" src="image/錢夫人.png"/>
+                                &emsp;
+                            </div>
+                            <div class="row d-flex justify-content-center">&emsp;<h3 id="people3">錢夫人</h3></div>
+                        </div>
+                        <div class="col">
+                            <table class="table table-hover h5">
+                                   <tr>
+                                       <td>金錢</td>
+                                       <td id="D_money">$$$</td>
+                                       <td>元</td>
+                                   </tr>
+                                   <tr>
+                                       <td>地圖</td>
+                                       <td id="D_land">$$$</td>
+                                       <td>塊</td>
+                                   </tr>
+                                   <tr>
+                                       <td>精神</td>
+                                       <td id="D_health">$$$</td>
+                                       <td>%</td>
+                                   </tr>
+                               </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--留白無用-->
+            <div class="row">&nbsp;</div> 
+            
+            <!-- 遊戲切三份，左右留白，主要用的是中間部分 -->
+            <div class="row">
+                <div class="col"></div> <!-- 留白 -->
+                <div class="col-11"  style="background-color:rgba(153,204,204,1)"> <!--遊戲全部背景顏色->
+                   
+                    <!--橫的一列 | 校門口*映霞胡 --> 
+                    <div class="row"> 
+                        <div class="col image" style="background-color:rgba(198,247,166,1)"> <!--開始的格子，有留邊--> 
+                            <div class="row "> <!--整格-->
+                                <div class="col game-size-x d-flex align-items-end justify-content-center image" style="background-image: url(image/start.png)">校門口</div>
+                                <div id="sp0" class="col-2 ">
+                                    <div id="Asp0" class="row"></div>
+                                    <div id="Bsp0" class="row"></div>
+                                    <div id="Csp0" class="row"></div>
+                                    <div id="Dsp0" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land1" class="col"> <!--獸醫系的格子-->
+                            <div class="row"> 
+                                <div class="col game-size-x d-flex align-items-center justify-content-center" >獸 醫 系</div>
+                                <div id="sp1" class="col-2">
+                                    <div id="Asp1" class="row"></div>
+                                    <div id="Bsp1" class="row"></div>
+                                    <div id="Csp1" class="row"></div>
+                                    <div id="Dsp1" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land2" class="col"> <!--生科系的格子-->
+                            <div class="row  "> 
+                                <div class="col game-size-x d-flex align-items-center justify-content-center" style="border-color:#608080;border-width:0px 0px 0px 3px;border-style:solid;">生 技 系</div>
+                                <div id="sp2" class="col-2">
+                                    <div id="Asp2" class="row"></div>
+                                    <div id="Bsp2" class="row"></div>
+                                    <div id="Csp2" class="row"></div>
+                                    <div id="Dsp2" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land3" class="col "  style="background-color:rgba(243, 136, 135,1)"> <!--機會的格子-->
+                            <div class="row "> 
+                                <div class="col game-size-x d-flex align-items-end fate justify-content-center image" >機　會</div>
+                                <div id="sp3" class="col-2">
+                                    <div id="Asp3" class="row"></div>
+                                    <div id="Bsp3" class="row"></div>
+                                    <div id="Csp3" class="row"></div>
+                                    <div id="Dsp3" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land4" class="col "> <!--機械系的格子-->
+                            <div class="row"> 
+                                <div class="col game-size-x  d-flex align-items-center  justify-content-center">機 械 系</div>
+                                <div id="sp4" class="col-2">
+                                    <div id="Asp4" class="row"></div>
+                                    <div id="Bsp4" class="row"></div>
+                                    <div id="Csp4" class="row"></div>
+                                    <div id="Dsp4" class="row"></div>
+                                </div>
+                            </div>
+                        </div>      <!--div.col>div.row>div.col-2>div.row{$}*4-->
+                        <div id="land5" class="col " style="background-color:#21BC84"> <!--映霞胡的格子-->
+                            <div class="row">
+                               <div class="col game-size-x  d-flex align-items-end  justify-content-center image" style="background-image: url(image/lake1.png)">映霞湖</div>
+                                <div id="sp5" class="col-2">
+                                    <div id="Asp5" class="row"></div>
+                                    <div id="Bsp5" class="row"></div>
+                                    <div id="Csp5" class="row"></div>
+                                    <div id="Dsp5" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--橫的一列 | 合作社*食品系  -->
+                    <div class="row">  
+                        
+                        <!--縱的一欄 | 合作社*植醫系 --> 
+                        <div class="col ">
+                            <div id="land19"  class="row ">
+                                <div class="col game-size-y  d-flex align-items-end  justify-content-center image-2" style="background-image: url(image/buy2.png);">合作社</div>
+                                <div id="sp19" class="col-2">
+                                    <div id="Asp19" class="row"></div>
+                                    <div id="Bsp19" class="row"></div>
+                                    <div id="Csp19" class="row"></div>
+                                    <div id="Dsp19" class="row"></div>
+                                </div>
+                            </div>
+                            <div  id="land18" class="row " style="background-color:rgba(243, 136, 135,1)">
+                                <div class="col game-size-y fate  d-flex align-items-end fate justify-content-center image">機　會</div>
+                                <div id="sp18" class="col-2">
+                                    <div id="Asp18" class="row"></div>
+                                    <div id="Bsp18" class="row"></div>
+                                    <div id="Csp18" class="row"></div>
+                                    <div id="Dsp18" class="row"></div>
+                                </div>
+                                
+                            </div>
+                            <div id="land17" class="row ">
+                                <div class="col game-size-y  d-flex align-items-center justify-content-center" style="border-color:#608080;border-width:0px 0px 3px 0px;border-style:solid;">電算中心</div>
+                                <div id="sp17" class="col-2" style="border-color:#608080;border-width:0px 0px 3px 0px;border-style:solid;">
+                                    <div id="Asp17" class="row"></div>
+                                    <div id="Bsp17" class="row"></div>
+                                    <div id="Csp17" class="row"></div>
+                                    <div id="Dsp17" class="row"></div>
+                                </div>
+                            </div>
+                            <div id="land16" class="row" >
+                                <div class="col game-size-y  d-flex align-items-center  justify-content-center" >植 醫 系</div>
+                                <div id="sp16" class="col-2">
+                                    <div id="Asp16" class="row"></div>
+                                    <div id="Bsp16" class="row"></div>
+                                    <div id="Csp16" class="row"></div>
+                                    <div id="Dsp16" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 中間區域 -->
+                        <div class="col-8" style="background-color:#F3FAFB;">
+                            <div class="row ">
+                                <!-- 留白用 -->
+                                <div class="col"></div>
+                                
+                                <!-- 主內 | 骰子 -->
+                                <div class="col-9 ">
+                                   
+                                    <!-- 事件執行的按鈕區 -->
+                                    <div class="row d-flex align-items-end justify-content-center font-weight-bold" style="height:100px;">
+                                        <button class="btn" type="button" style="background-image: url(image/AA.png); background-position:center; background-size:50px;background-repeat: no-repeat;width:50px;height: 70px;background-color:#F3FAFB">  
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- 事件的內容顯示區 -->
+                                    <div id="text" class="row d-flex align-items-center justify-content-center font-weight-bold" style="height:100px;background-color:#DFF1F8 ">
+                                        <h3 id="eventH" style="font-size: 36px;">事件內容$$事件的內容</h3></div>
+                                    
+                                    <!-- 中間留白 -->
+                                    <div class="row d-flex align-items-center justify-content-center" style="height:60px;"></div>
+                                    
+                                    <!-- 骰子內容 -->
+                                    <div class="row d-flex align-items-center justify-content-center font-weight-bold " style="height:200px;">
+                                        
+                                        <!-- 文字顯示 -->   
+                                        <div class="col">
+                                            <div  class="row  align-items-center justify-content-center dice"><h1 id="nowPlayerH">
+                                            玩 家
+                                            </h1></div>
+                                            <div class="row dice d-flex align-items-center justify-content-center" id="goStepsH">走 ? 步</div>
+                                        </div>
+                                        
+                                        <!--骰子執行的按鈕區-->
+                                        <div class="col-5 d-flex align-items-center justify-content-center">
+                                            <button id="diceButtonH" class="btn" type="submit" style="background-image: url(image/dice1.png);width:170px;height: 170px;background-position:center;background-size:170px;background-repeat: no-repeat;background-color:#F3FAFB;padding:0px;margin:0px;"></button>
+                                        </div>    
+                                    </div>
+                                    <div class="row d-flex align-items-center justify-content-center" style="height:100px;"></div>
+                                </div>
+                                
+                                <!-- 留白用 -->
+                                <div class="col"></div>
+                            </div> 
+                        </div>
+                        
+                        <!--縱的一欄 | 食品系*餐旅系 --> 
+                        <div class="col"> 
+                            <div id="land6" class="row">
+                                <div class="col game-size-y  d-flex align-items-center  justify-content-center" style="border-color:#608080;border-width:0px 0px 3px 0px;border-style:solid;">食 品 系</div>
+                                <div id="sp6" class="col-2" style="border-color:#608080;border-width:0px 0px 3px 0px;border-style:solid;">
+                                    <div id="Asp6" class="row"></div>
+                                    <div id="Bsp6" class="row"></div>
+                                    <div id="Csp6" class="row"></div>
+                                    <div id="Dsp6" class="row"></div>
+                                </div>
+                            </div>
+                            <div id="land7" class="row">
+                                <div class="col  game-size-y  d-flex align-items-end  justify-content-center image-2 " style="background-image: url(image/city.png)">管院大廈</div>
+                                <div id="sp7" class="col-2">
+                                    <div id="Asp7" class="row"></div>
+                                    <div id="Bsp7" class="row"></div>
+                                    <div id="Csp7" class="row"></div>
+                                    <div id="Dsp7" class="row"></div>
+                                </div>
+                            </div>
+                            <div id="land8" class="row " style="background-color:rgba(243, 136, 135,1)">
+                                <div class="col game-size-y fate  d-flex align-items-end fate justify-content-center image">機　會</div>
+                                <div id="sp8" class="col-2">
+                                    <div id="Asp8" class="row"></div>
+                                    <div id="Bsp8" class="row"></div>
+                                    <div id="Csp8" class="row"></div>
+                                    <div id="Dsp8" class="row"></div>
+                                </div>
+                            </div>
+                            <div id="land9" class="row ">
+                                <div class="col game-size-y  d-flex align-items-center  justify-content-center" >餐 旅 系</div>
+                                <div id="sp9" class="col-2">
+                                    <div id="Asp9" class="row"></div>
+                                    <div id="Bsp9" class="row"></div>
+                                    <div id="Csp9" class="row"></div>
+                                    <div id="Dsp9" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--出納組*健康中心 | 橫的一列-->
+                    <div class="row"> 
+                        <div id="land15" class="col" style="background-color: rgba(255, 171, 64,1)"> <!--出納組的格子-->
+                            <div class="row">
+                                <div class="col game-size-x  d-flex align-items-end  justify-content-center image" style="background-image: url(image/bank1.png)">出納組</div>
+                                <div id="sp15" class="col-2">
+                                    <div id="Asp15" class="row"></div>
+                                    <div id="Bsp15" class="row"></div>
+                                    <div id="Csp15" class="row"></div>
+                                    <div id="Dsp15" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land14" class="col "> <!--動畜系的格子-->
+                            <div class="row"> 
+                                <div class="col game-size-x  d-flex align-items-center justify-content-center">動 畜 系</div>
+                                <div id="sp14" class="col-2">
+                                    <div id="Asp14" class="row"></div>
+                                    <div id="Bsp14" class="row"></div>
+                                    <div id="Csp14" class="row"></div>
+                                    <div id="Dsp14" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land13" class="col "  style="background-color:rgba(243, 136, 135,1)"> <!--機　會的格子-->
+                            <div class="row" > 
+                                <div class="col fate game-size-x  d-flex align-items-end fate justify-content-center image">機　會</div>
+                                <div id="sp13" class="col-2">
+                                    <div id="Asp13" class="row"></div>
+                                    <div id="Bsp13" class="row"></div>
+                                    <div id="Csp13" class="row"></div>
+                                    <div id="Dsp13" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land12" class="col " > <!--水產系的格子-->
+                            <div class="row"> 
+                                <div class="col game-size-x  d-flex align-items-center  justify-content-center">水 產 系</div>
+                                <div id="sp12" class="col-2">
+                                    <div id="Asp12" class="row"></div>
+                                    <div id="Bsp12" class="row"></div>
+                                    <div id="Csp12" class="row"></div>
+                                    <div id="Dsp12" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land11" class="col "> <!--體育館的格子-->
+                            <div class="row"> 
+                                <div class="col game-size-x  d-flex align-items-end  justify-content-center image-2" style="background-image: url(image/gym1.png);border-color:#608080;border-width:0px 0px 0px 3px;border-style:solid;">體育館</div>
+                                <div id="sp11" class="col-2">
+                                    <div id="Asp11" class="row"></div>
+                                    <div id="Bsp11" class="row"></div>
+                                    <div id="Csp11" class="row"></div>
+                                    <div id="Dsp11" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="land10" class="col" style="background-color:rgba(252, 225, 225,1)"> <!--健康中心的格子-->
+                            <div class="row">
+                               <div class="col game-size-x  d-flex align-items-end  justify-content-center image" style="background-image: url(image/nurse1.png)">健康中心</div>
+                                <div id="sp10" class="col-2">
+                                    <div id="Asp10" class="row"></div>
+                                    <div id="Bsp10" class="row"></div>
+                                    <div id="Csp10" class="row"></div>
+                                    <div id="Dsp10" class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"></div> <!--留 白 -->
+            </div>
+        </div>
+        
+        <div style="height: 100px"></div>
+        <script src="myScript.js"></script>    
+    </body>
+</html>
+
